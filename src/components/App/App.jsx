@@ -34,7 +34,7 @@ function App() {
             <Header />
             <main>
                 <Form />
-                <List />
+                <List dog={shoppingList}/>
                 <p>Under Construction...</p>
             </main>
         </div>
