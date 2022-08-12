@@ -33,7 +33,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <Form />
+                <Form getList={getList}/>
                 <List dog={shoppingList}/>
                 <p>Under Construction...</p>
             </main>

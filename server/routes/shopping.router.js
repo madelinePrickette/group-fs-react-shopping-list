@@ -14,4 +14,24 @@ router.get('/', (req, res) => {
         })
 })
 
+router.post('/', (req, res) => {
+    const item = req.body;
+    const sqlText = `INSERT INTO "shoppingList" (name, quantity, unit)
+                    VALUES ($1, $2, $3)`;
+
+    pool.query(sqlText, [item.name, item.quantity, item.unit])
+        .then((result) => {
+            console.log(`Added item to the database`, result);
+            res.sendStatus(201);
+        })
+    .catch((error) => {
+        console.log(`Error making database query ${sqlText}`, error);
+        res.sendStatus(500);
+    })
+})
+
+
+
+
+
 module.exports = router;
