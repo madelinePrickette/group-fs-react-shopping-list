@@ -34,7 +34,7 @@ function App() {
             <Header />
             <main>
                 <Form getList={getList}/>
-                <List dog={shoppingList}/>
+                <List dog={shoppingList} getList={getList}/>
                 <p>Under Construction...</p>
             </main>
         </div>
